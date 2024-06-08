@@ -52,9 +52,7 @@
 											<p>Sitio construido con Django y Python.</p>
 											
                                         </div>
-                                         <a href="https://onlyflans-9jpd.onrender.com/">
-										 <img class="img-fluid" src="assets/onlyf.png" alt="..." width="500" height="350" />
-										 </a>
+                                         <img class="img-fluid" src="assets/onlyf.png" alt="..." width="500" height="350" />
                                     </div>
                                 </div>
                             </div>
