@@ -1,124 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Modern Business - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Custom Google font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body class="d-flex flex-column h-100 bg-light">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Start Bootstrap</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Viajes Chile</title>
+    <!-- icono -->
+    <link rel="shortcut icon" href="assets/img/viajes.svg" type="image/x-icon">
+    <!-- Include Bootstrap's CSS and JS (este está al final) CDN links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&amp;family=Oswald:wght@200;400;600;700&amp;display=swap" rel="stylesheet">
+    <!-- link css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style type="text/css">
+        .logo-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #logo {
+            width: 200px;
+            /* Tamaño inicial del logo */
+            transition: width 0.3s ease;
+        }
+
+        /* Estilos para cuando el logo esté más grande */
+        #logo.enlarged {
+            width: 400px;
+            /* Tamaño del logo cuando esté más grande */
+            z-index: 999;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @font-face {
+            font-weight: 400;
+            font-style: normal;
+            font-family: circular;
+
+            src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Regular.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-weight: 500;
+            font-style: normal;
+            font-family: circular;
+
+            src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Medium.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-weight: 700;
+            font-style: normal;
+            font-family: circular;
+
+            src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-weight: 900;
+            font-style: normal;
+            font-family: circular;
+
+            src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Black.woff2') format('woff2');
+
+        }
+
+        body {
+            overflow-x: hidden;
+            /* Evita el desplazamiento horizontal */
+        }
+		  .text-justify {
+            text-align: justify;
+        }
+    </style>
+
+</head>
+
+<body style="background-color:#212529;">
+    <!-- inicio Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-bs-toggle="tooltip" title="Ir al inicio"> <img class="" src="assets/img/viajes.svg" width="40px"><strong>&nbsp;&nbsp;&nbsp;Viajes Chile</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#carouselExampleInterval" data-bs-toggle="tooltip" title="Ver carrusel de imágenes">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Quienes-Somos" data-bs-toggle="tooltip" title="Conócenos">Quienes Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Destacados" data-bs-toggle="tooltip" title="Nuestros lugares destacados">Destacados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Contacto" data-bs-toggle="tooltip" title="Contáctanos">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- fin navbar hecha con bootstrap -->
+        <!-- inicio Carrucel -->
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="assets/img/carousel1.jpg" class="d-block w-100" alt="...">
                 </div>
-            </nav>
-            <!-- Projects Section-->
-            <section class="py-5">
-                <div class="container px-5 mb-5">
-                    <div class="text-center mb-5">
-                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
-                    </div>
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <!-- Project Card 1-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">										    
-                                            <h2 class="fw-bolder">Proyecto N°1:</h2>
-                                            <p><a href="https://onlyflans-9jpd.onrender.com/">OnlyFlans</a></p>
-											<p>Sitio construido con Django y Python + SQlite.</p>											
-                                        </div>
-                                         <a href="https://onlyflans-9jpd.onrender.com/">
-										 <img class="img-fluid" src="assets/onlyf.png" alt="..." width="500" height="350" />
-										 </a>									
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Card 2-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Projecto N°2:</h2>
-											<p><a href="https://todo-3730.onrender.com/">Todo</a></p>
-											<p>Sitio construido con Django, Python + SQLite.</p>                                   
-                                        </div>
-                                         <a href="https://todo-3730.onrender.com/">
-										 <img class="img-fluid" src="assets/todo.png" alt="..." width="500" height="350" />
-										 </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project Card 3-->
-							<div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">										    
-                                             <h2 class="fw-bolder">Projecto N°3:</h2>
-											<p><a href="https://viajeschile2.onrender.com/">Página Web</a></p>
-											<p>Sitio construido con HTML+css y javascript.</p>    									
-                                        </div>
-                                        <a href="https://viajeschile2.onrender.com/">
-										<img class="img-fluid" src="assets/viajes.png" alt="..." width="500" height="350" />
-										</a>								
-                                     </div>
-                                </div>
-                            </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="assets/img/carousel2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/carousel3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- fin Carrucel -->
+        
+
+    <!-- inicio Quienes Somos -->
+    <section id="Quienes-Somos" class="pt-5 container d-none d-sm-block">
+        <div>
+            <h1 class="text-center fw-bold my-md-5 text-white">
+                ¿QUIENES SOMOS?
+            </h1>
+        </div>
+        <div class="row pt-3">
+            <div class="col-4 text-white">
+                <h2 class="bg-info text-center" data-bs-toggle="tooltip" title="Explora nuestros vuelos"> <i class="fa-solid fa-plane"></i> </h2>
+                <p class="text-justify">
+                    Nuestro equipo especializado trabaja en estrecha colaboración con las principales aerolíneas para garantizar opciones flexibles y adaptadas a las necesidades específicas de cada empresa.
+                </p>
+            </div>
+            <div class="col-4 text-white">
+                <p class="text-justify">
+                  Colaboramos estrechamente con agencias especializadas en actividades como trekking en glaciares, rafting en aguas bravas, escalada en roca y expediciones de montaña, garantizando estándares de seguridad y calidad excepcionales en cada aventura.
+                </p>
+                <h2 class="bg-info text-center" data-bs-toggle="tooltip" title="Descubre nuestras montañas"> <i class="fa-solid fa-mountain"></i></h2>
+            </div>
+            <div class="col-4 text-white">
+                <h2 class="bg-info text-center" data-bs-toggle="tooltip" title="Explora nuestras rutas"> <i class="fa-solid fa-route"></i> </h2>
+                <p class="text-justify">
+                   Chile ofrece una diversidad de paisajes y experiencias que hacen de sus rutas turísticas algunas de las más impresionantes del mundo. Desde el desierto árido del norte hasta los glaciares del sur, pasando por la vibrante metrópolis de Santiago y los valles vinícolas de la región central, cada ruta ofrece una variedad única de atracciones y actividades.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- fin Quienes Somos -->
+
+    <!-- inicio Destacados -->
+    <section id="Destacados" class="py-5">
+        <div>
+            <h1 class="fw-bold text-center text-uppercase my-md-5 text-white">DESTACADOS</h1>
+            <!-- <hr class="bg-white opacity-100mx-auto w-25"> -->
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 my-2">
+                    <div class="card border-0 bg-info" style="height: 30rem;">
+                        <img id="destacado" src="assets/img/card1.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title fw-light">Torres del Paine.</h5>
+                            <p class="card-text fw-light text-justify">
+                                 Las Torres del Paine, ubicadas en la Patagonia chilena, son un conjunto de impresionantes montañas de granito que forman parte del Parque Nacional Torres del Paine.</p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Call to action section-->
-            <section class="py-5 bg-gradient-primary-to-secondary text-white">
-                <div class="container px-5 my-5">
-                    <div class="text-center">
-                        <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
-                        <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact me</a>
+                <div class="col-12 col-md-3 my-2">
+                    <div class="card border-0 bg-info" style="height: 30rem;">
+                        <img src="assets/img/card2.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title fw-light">Lago Chungará</h5>
+                            <p class="card-text fw-light text-justify">
+                               El Lago Chungará, ubicado en el extremo norte de Chile dentro del Parque Nacional Lauca, es uno de los lagos más altos del mundo, situado a unos 4,517 metros sobre el nivel del mar.</p>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2023</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="#!">Privacy</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Terms</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+                <div class="col-12 col-md-3 my-2">
+                    <div class="card border-0 bg-info" style="height: 30rem;">
+                        <img src="assets/img/patagonia.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title fw-light">Hotel Hacienda Patagonia</h5>
+                            <p class="card-text fw-light text-justify">
+                               El Hotel Hacienda Patagonia, ubicado en el corazón de la majestuosa región patagónica de Chile, ofrece una experiencia única de lujo y confort en un entorno natural incomparable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 my-2">
+                    <div class="card border-0 bg-info" style="height: 30rem;">
+                        <img src="assets/img/reserva.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title fw-light">Reserva Biológica Huilo Huilo</h5>
+                            <p class="card-text fw-light text-justify">
+                                La Reserva Biológica Huilo Huilo, ubicada en el sur de Chile, es un santuario natural de biodiversidad y belleza escénica incomparable. Este espectacular destino ecoturístico alberga una vasta extensión de bosques vírgenes, ríos cristalinos y una abundante vida silvestre, incluyendo especies únicas como el pudú y el huemul.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        </div>
+    </section>
+    <!-- fin Destacados -->
+    <!-- inicio Contacto -->
+    <section id="Contacto" class="py-5 container">
+        <div>
+            <h1 class="text-center text-uppercase fw-bold my-md-5 text-white">Contacto</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="https://escuelaenlinea.es/viajeschile2/includes/enviar.php" method="post" class="text-white">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico">
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Mensaje"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.7991914841043!2d-70.64896552402441!3d-33.44888954462038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a91a0bdf83%3A0xd078d9fe2b46c3a6!2sSantiago%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses!2ses!4v1685280008244!5m2!1ses!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- fin Contacto -->
+    <!-- inicio Footer -->
+    <footer id="Footer" class="text-center text-white py-5 bg-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <p class="fw-bold" style="color:white">Viajes Chile </p>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <i class="fa-brands fa-github-square fa-2x mx-2" data-bs-toggle="tooltip" title="Visítanos en GitHub"></i>
+                    <i class="fa-brands fa-linkedin fa-2x mx-2" data-bs-toggle="tooltip" title="Síguenos en LinkedIn"></i>
+                    <i class="fa-brands fa-twitter-square fa-2x mx-2" data-bs-toggle="tooltip" title="Síguenos en Twitter"></i>
+                    <i class="fa-brands fa-facebook-square fa-2x mx-2" data-bs-toggle="tooltip" title="Síguenos en Facebook"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- fin footer -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Viajes Chile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-bg-light">
+                    Tu mensaje ha sido enviado exitosamente.
+                    Gracias por contactarnos!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const logo = document.getElementById('logo');
+
+        logo.addEventListener('mouseenter', () => {
+            logo.classList.add('enlarged');
+        });
+
+        logo.addEventListener('mouseleave', () => {
+            logo.classList.remove('enlarged');
+        });
+
+        // Inicializar tooltips
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        });
+    </script>
+    <!-- para que funcione js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- para que funcione jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- link al archivo js (nuestros script deben ser lo último)-->
+    <script src="assets/js/script.js"></script>
+</body>
+
 </html>
